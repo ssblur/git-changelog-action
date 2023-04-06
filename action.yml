@@ -1,0 +1,10 @@
+name: 'Git Changelog Generator'
+description: 'Generates a Git changelog using data from HEAD to the previous tag'
+outputs:
+  changelog:
+    description: 'The generated changelog'
+runs:
+  using: 'composite'
+  steps:
+    - run: action.sh
+      shell: bash
