@@ -3,8 +3,10 @@ description: 'Generates a Git changelog using data from HEAD to the previous tag
 outputs:
   changelog:
     description: 'The generated changelog'
+    value: ${{ steps.output.outputs.changelog }}
 runs:
   using: 'composite'
   steps:
-    - run: ${{ github.action_path }}/action.sh
+    - id: output
+      run: ${{ github.action_path }}/action.sh
       shell: bash
