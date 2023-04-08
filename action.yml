@@ -6,6 +6,5 @@ outputs:
 runs:
   using: 'composite'
   steps:
-    - uses: actions/checkout@v2
-    - run: action.sh
+    - run: ${{ github.action_path }}/action.sh
       shell: bash
